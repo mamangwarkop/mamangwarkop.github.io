@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mamang Warkop | B2B Lead Intelligence APIs, Apify Scrapers & Seller Automation Suite</title>
+  <meta name="description" content="Production-grade B2B lead enrichment APIs on Apify Store (Google Ads Transparency Spy, Google Play Reviews & Developer Leads, Website Contact & Ad-Pixel Enricher) + E-Commerce Seller Tools." />
+  <style>
+    :root {
+      --bg: #050508;
+      --card: #0e0e17;
+      --card-hover: #141422;
+      --border: #27203d;
+      --text: #f8fafc;
+      --muted: #94a3b8;
+      --purple: #a855f7;
+      --purple-glow: rgba(168, 85, 247, 0.25);
+      --cyan: #22d3ee;
+      --green: #10b981;
+      --gold: #f59e0b;
+    }
+    * { box-sizing: border-box; }
+    body {
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      background: radial-gradient(circle at 50% 0%, #1a0b2e 0%, var(--bg) 55%);
+      color: var(--text);
+      margin: 0;
+      line-height: 1.6;
+    }
+    .container { max-width: 1080px; margin: 0 auto; padding: 48px 24px; }
+    .hero { text-align: center; padding: 32px 0 48px; border-bottom: 1px solid var(--border); }
+    .badge {
+      display: inline-block;
+      background: rgba(168, 85, 247, 0.15);
+      border: 1px solid rgba(168, 85, 247, 0.4);
+      color: #d8b4fe;
+      padding: 6px 16px;
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.4px;
+    }
+    h1 {
+      font-size: 2.75rem;
+      margin: 18px 0 14px;
+      line-height: 1.15;
+      background: linear-gradient(90deg, #ffffff, #d8b4fe, #22d3ee);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    p.lead { font-size: 1.15rem; color: var(--muted); max-width: 760px; margin: 0 auto 28px; }
+    .btn-row { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+    .cta {
+      display: inline-block;
+      background: linear-gradient(135deg, #9333ea, #6366f1);
+      color: #fff;
+      font-weight: 700;
+      padding: 12px 24px;
+      border-radius: 10px;
+      text-decoration: none;
+      box-shadow: 0 0 24px var(--purple-glow);
+      transition: transform 0.15s ease;
+    }
+    .cta:hover { transform: translateY(-2px); }
+    .cta-secondary {
+      display: inline-block;
+      background: #141424;
+      color: #e2e8f0;
+      border: 1px solid var(--border);
+      font-weight: 600;
+      padding: 12px 24px;
+      border-radius: 10px;
+      text-decoration: none;
+    }
+    h2.section-title { font-size: 1.8rem; margin: 52px 0 12px; color: #f1f5f9; }
+    p.section-sub { color: var(--muted); margin-top: 0; margin-bottom: 28px; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(310px, 1fr)); gap: 24px; margin: 28px 0; }
+    .card {
+      background: var(--card);
+      padding: 28px;
+      border-radius: 16px;
+      border: 1px solid var(--border);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: border-color 0.2s, background 0.2s;
+    }
+    .card:hover { border-color: var(--purple); background: var(--card-hover); }
+    .actor-header { display: flex; align-items: center; gap: 16px; margin-bottom: 16px; }
+    .actor-icon {
+      width: 64px;
+      height: 64px;
+      border-radius: 14px;
+      object-fit: cover;
+      border: 1px solid rgba(168, 85, 247, 0.4);
+      background: #000;
+      flex-shrink: 0;
+    }
+    .actor-title { font-size: 1.2rem; font-weight: 700; margin: 0; color: #fff; }
+    .price-tag {
+      display: inline-block;
+      margin-top: 4px;
+      font-size: 12px;
+      color: var(--cyan);
+      background: rgba(34, 211, 238, 0.12);
+      padding: 2px 10px;
+      border-radius: 999px;
+      font-weight: 600;
+    }
+    .card ul { padding-left: 18px; color: #cbd5e1; font-size: 0.95rem; margin: 12px 0 20px; }
+    .card ul li { margin-bottom: 8px; }
+    .card-link {
+      display: block;
+      text-align: center;
+      padding: 11px 16px;
+      background: rgba(168, 85, 247, 0.15);
+      border: 1px solid var(--purple);
+      color: #e9d5ff;
+      border-radius: 8px;
+      font-weight: 600;
+      text-decoration: none;
+    }
+    .card-link:hover { background: var(--purple); color: #fff; }
+    table { width: 100%; border-collapse: collapse; margin: 24px 0; background: var(--card); border-radius: 12px; overflow: hidden; border: 1px solid var(--border); }
+    th, td { padding: 14px 16px; text-align: left; border-bottom: 1px solid var(--border); }
+    th { background: #090910; color: #d8b4fe; }
+    pre { background: #030306; padding: 18px; border-radius: 12px; overflow-x: auto; font-size: 13px; border: 1px solid var(--border); color: #a5f3fc; }
+    .footer { text-align: center; color: var(--muted); font-size: 0.9rem; margin-top: 64px; padding-top: 24px; border-top: 1px solid var(--border); }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="hero">
+      <span class="badge">MAMANG WARKOP &bull; AUTOMATION &amp; DATA INTELLIGENCE SUITE</span>
+      <h1>High-Margin B2B Lead Enrichment APIs &amp; E-Commerce Profit Tools</h1>
+      <p class="lead">
+        Zero-browser overhead scrapers and B2B intelligence pipelines built for Clay, n8n, Make.com, and growth agencies — plus instant profit &amp; content calculators for Southeast Asian sellers.
+      </p>
+      <div class="btn-row">
+        <a class="cta" href="https://apify.com/mamang_warkop" target="_blank" rel="noopener">Explore Apify Store Actors &rarr;</a>
+        <a class="cta-secondary" href="n8n-google-ads-lead-enricher.json" download>Download Free n8n Lead Workflow (.json)</a>
+        <a class="cta-secondary" href="https://lynk.id/mamangwarkop" target="_blank" rel="noopener">Katalog Produk Indonesia (Lynk.id) &rarr;</a>
+      </div>
+    </div>
+
+    <h2 class="section-title">1. Global B2B Data &amp; Ad-Spy Actors (Apify Store)</h2>
+    <p class="section-sub">Pay-Per-Event APIs with built-in daily health resilience and instant JSON/CSV export.</p>
+
+    <div class="grid">
+      <!-- Actor 1 -->
+      <div class="card">
+        <div>
+          <div class="actor-header">
+            <img class="actor-icon" src="icon-google-ads-transparency.png" alt="Google Ads Transparency Scraper Icon" />
+            <div>
+              <h3 class="actor-title">Google Ads Transparency &amp; Ad-Spend Checker</h3>
+              <span class="price-tag">$1.00 / 1,000 results</span>
+            </div>
+          </div>
+          <p style="color:var(--muted);font-size:0.93rem;">
+            Smart entity resolution matches the true primary brand advertiser by active ad volume instead of random resellers.
+          </p>
+          <ul>
+            <li><strong>Ad Creative Spy (<code>ads</code>):</strong> Headlines, descriptions, landing pages, images &amp; videos.</li>
+            <li><strong>Bulk B2B Domain Qualifier (<code>check_domains</code>):</strong> Check 1,000+ domains for active Google Ads spend.</li>
+            <li><strong>Strategy Breakdown (<code>summary</code>):</strong> Format split &amp; top landing page hosts.</li>
+          </ul>
+        </div>
+        <a class="card-link" href="https://apify.com/mamang_warkop/google-ads-transparency-scraper" target="_blank" rel="noopener">Run Actor on Apify &rarr;</a>
+      </div>
+
+      <!-- Actor 2 -->
+      <div class="card">
+        <div>
+          <div class="actor-header">
+            <img class="actor-icon" src="icon-google-play-scraper.png" alt="Google Play Reviews & Leads Scraper Icon" />
+            <div>
+              <h3 class="actor-title">Google Play Reviews &amp; App Developer Leads</h3>
+              <span class="price-tag">$0.50 / 1,000 results</span>
+            </div>
+          </div>
+          <p style="color:var(--muted);font-size:0.93rem;">
+            3-in-1 Android intelligence engine for voice-of-customer mining and B2B mobile app publisher outreach.
+          </p>
+          <ul>
+            <li><strong>Star-Filtered Reviews (<code>reviews</code>):</strong> Extract 1-star bug reports &amp; developer replies.</li>
+            <li><strong>Full App Metadata (<code>app_details</code>):</strong> Real install counts, ratings histogram &amp; pricing.</li>
+            <li><strong>B2B Publisher Leads (<code>search_leads</code>):</strong> Verified developer email, website &amp; physical address.</li>
+          </ul>
+        </div>
+        <a class="card-link" href="https://apify.com/mamang_warkop/google-play-reviews-and-leads-scraper" target="_blank" rel="noopener">Run Actor on Apify &rarr;</a>
+      </div>
+
+      <!-- Actor 3 -->
+      <div class="card">
+        <div>
+          <div class="actor-header">
+            <img class="actor-icon" src="icon-b2b-leads-enricher.png" alt="B2B Website Contact & Pixel Lead Enricher Icon" />
+            <div>
+              <h3 class="actor-title">B2B Website Contact &amp; Ad-Pixel Enricher</h3>
+              <span class="price-tag">$2.00 / 1,000 domains</span>
+            </div>
+          </div>
+          <p style="color:var(--muted);font-size:0.93rem;">
+            Turn raw domain lists from Google Maps or Apollo into pitch-ready agency leads in seconds.
+          </p>
+          <ul>
+            <li><strong>Decision-Maker Contacts:</strong> Crawls homepage, <code>/contact</code> &amp; <code>/about</code> for emails, phones &amp; WhatsApp links.</li>
+            <li><strong>Ad-Pixel Radar:</strong> Detects Meta Pixel, TikTok Pixel, Google Ads Tag, GA4 &amp; GTM.</li>
+            <li><strong>Agency Pitch Signal:</strong> Automatically outputs <code>missingAdPixels</code> + E-Commerce tech stack.</li>
+          </ul>
+        </div>
+        <a class="card-link" href="https://apify.com/mamang_warkop/b2b-website-contact-and-pixel-lead-enricher" target="_blank" rel="noopener">Run Actor on Apify &rarr;</a>
+      </div>
+
+      <!-- Actor 4 -->
+      <div class="card">
+        <div>
+          <div class="actor-header">
+            <img class="actor-icon" src="icon-shopify-leads-scraper.png" alt="Shopify Products & Store Leads Scraper Icon" />
+            <div>
+              <h3 class="actor-title">Shopify Products, Prices &amp; B2B Store Leads</h3>
+              <span class="price-tag">$1.00 / 1,000 results</span>
+            </div>
+          </div>
+          <p style="color:var(--muted);font-size:0.93rem;">
+            Zero-browser 3-in-1 Shopify catalog extractor and B2B agency prospect enricher.
+          </p>
+          <ul>
+            <li><strong>Product &amp; Pricing Catalog (<code>products</code>):</strong> Prices, compare-at discounts, variants, SKUs &amp; stock status.</li>
+            <li><strong>B2B Store Lead Intelligence (<code>store_leads</code>):</strong> Emails, socials, min/max/avg price, Klaviyo &amp; Ad Pixels.</li>
+            <li><strong>Collections Extractor (<code>collections</code>):</strong> Full public collections metadata &amp; counts.</li>
+          </ul>
+        </div>
+        <a class="card-link" href="https://apify.com/mamang_warkop/shopify-products-and-store-leads-scraper" target="_blank" rel="noopener">Run Actor on Apify &rarr;</a>
+      </div>
+
+      <!-- Actor 5 -->
+      <div class="card">
+        <div>
+          <div class="actor-header">
+            <img class="actor-icon" src="icon-github-leads-scraper.png" alt="GitHub Developers & Tech Leads Scraper Icon" />
+            <div>
+              <h3 class="actor-title">GitHub Developers, Tech Talent &amp; Emails</h3>
+              <span class="price-tag">$2.00 / 1,000 leads</span>
+            </div>
+          </div>
+          <p style="color:var(--muted);font-size:0.93rem;">
+            Target senior software engineers, AI developers &amp; tech leads by language, location &amp; hireability.
+          </p>
+          <ul>
+            <li><strong>Verified Contact Info:</strong> Extracts public emails, companies, portfolios &amp; Twitter/X handles.</li>
+            <li><strong>Top Languages Fingerprint:</strong> Detects primary active programming languages from public repos.</li>
+            <li><strong>Recruiter Intelligence:</strong> Automatically computes <code>techLeadScore</code> (0–100) &amp; <code>recruiterPitchAngle</code>.</li>
+          </ul>
+        </div>
+        <a class="card-link" href="https://apify.com/mamang_warkop/github-developers-and-tech-leads-scraper" target="_blank" rel="noopener">Run Actor on Apify &rarr;</a>
+      </div>
+
+      <!-- Actor 6 -->
+      <div class="card">
+        <div>
+          <div class="actor-header">
+            <img class="actor-icon" src="icon-product-hunt-scraper.png" alt="Product Hunt Launches & Maker Leads Scraper Icon" />
+            <div>
+              <h3 class="actor-title">Product Hunt Daily Launches &amp; Startup Leads</h3>
+              <span class="price-tag">$2.00 / 1,000 leads</span>
+            </div>
+          </div>
+          <p style="color:var(--muted);font-size:0.93rem;">
+            Scrape daily Product Hunt launches and enrich startup websites with decision-maker contacts &amp; pixels.
+          </p>
+          <ul>
+            <li><strong>Real Startup URL Resolution:</strong> Follows redirect headers to reach the official company landing page.</li>
+            <li><strong>Decision-Maker Contacts:</strong> Crawls for founder emails (<code>hello@</code>, <code>team@</code>), Twitter/X &amp; Discord.</li>
+            <li><strong>Growth Gap Radar:</strong> Detects missing Meta &amp; TikTok pixels + outputs ready-to-send <code>agencyPitchAngle</code>.</li>
+          </ul>
+        </div>
+        <a class="card-link" href="https://apify.com/mamang_warkop/product-hunt-launches-and-maker-leads-scraper" target="_blank" rel="noopener">Run Actor on Apify &rarr;</a>
+      </div>
+    </div>
+
+    <h2 class="section-title">Free Lead List + Done-For-You Service</h2>
+    <p class="section-sub">Grab a free CSV of freshly launched startups (emails, socials, pixel audit, outreach hook), or order a custom list for your niche. Free 10-lead sample before you pay.</p>
+    <div class="btn-row" style="justify-content:flex-start;margin-bottom:12px;">
+      <a class="cta" href="https://github.com/mamangwarkop/startup-leads-free-sample" target="_blank" rel="noopener">Download Free CSV</a>
+      <a class="cta-secondary" href="https://github.com/mamangwarkop/startup-leads-free-sample/issues/new?title=Lead%20list%20request&body=Niche%3A%0ALocation%3A%0ASize%20(100%2F500%2F2000)%3A%0AEmail%3A" target="_blank" rel="noopener">Order custom list from $15</a>
+    </div>
+
+    <h2 class="section-title">2. End-to-End Agency Lead Pipeline (cURL / n8n / Make / Clay)</h2>
+    <p class="section-sub">Combine Actor #3 (Contact &amp; Pixel Radar) + Actor #1 (Google Ads Spend Verification) in a single automated pipeline:</p>
+    <pre>curl -X POST "https://api.apify.com/v2/acts/mamang_warkop~b2b-website-contact-and-pixel-lead-enricher/run-sync-get-dataset-items?token=YOUR_APIFY_TOKEN" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "domains": ["shopify.com", "gymshark.com", "kopikenangan.com"],
+    "crawlContactPages": true,
+    "maxResults": 10
+  }'</pre>
+
+    <h2 class="section-title">3. Katalog Produk Digital Indonesia (Seller &amp; Affiliate Automation)</h2>
+    <p class="section-sub">Aplikasi web mandiri (100% jalan di HP/Laptop tanpa biaya langganan bulanan) untuk Seller Shopee, TikTok Shop, dan Kreator Affiliate.</p>
+
+    <div class="grid">
+      <div class="card">
+        <div>
+          <span class="badge" style="margin-bottom:10px;">BESTSELLER &bull; Rp 69.000 Sekali Bayar</span>
+          <h3 class="actor-title">ProfitKilat Pro 2026 — Kalkulator Margin, ROAS &amp; Riset Kompetitor</h3>
+          <p style="color:var(--muted);font-size:0.93rem;">
+            Lindungi margin tokomu dari potongan biaya admin terbaru 2026 (Shopee, TikTok Shop, Tokopedia) dan hitung Break-Even ROAS sebelum boncos iklan.
+          </p>
+          <ul>
+            <li>Simulasi otomatis Admin Kategori, Gratis Ongkir Xtra, Promo Xtra, Komisi Affiliate &amp; Biaya Proses Pesanan.</li>
+            <li>Kalkulator Break-Even ROAS &amp; batas maksimal CPA iklan per produk.</li>
+            <li>Generator Script Video Affiliate (Hook, Masalah, Solusi, CTA) + Bookmarklet Ekstraktor CSV Kompetitor.</li>
+          </ul>
+        </div>
+        <a class="card-link" href="https://lynk.id/mamangwarkop" target="_blank" rel="noopener">Dapatkan di Lynk.id / Mayar &rarr;</a>
+      </div>
+
+      <div class="card">
+        <div>
+          <span class="badge" style="margin-bottom:10px;">BARU &bull; Rp 79.000 Sekali Bayar</span>
+          <h3 class="actor-title">InvoiceKilat &amp; WA Follow-Up Otomatis UMKM/Freelancer</h3>
+          <p style="color:var(--muted);font-size:0.93rem;">
+            Generator Invoice PDF instan + Kalkulator Termin Pembayaran + Pembuat Link Tagihan WhatsApp 1-Klik untuk Agensi, Freelancer, dan Grosir B2B.
+          </p>
+          <ul>
+            <li>Buat Invoice &amp; Quotation profesional lengkap dengan QRIS/Rekening &amp; pajak PPN/PPh 23 opsional.</li>
+            <li>Generator berjenjang pesan penagihan sopan ke WhatsApp (H-3, Jatuh Tempo, H+7 Overdue).</li>
+            <li>Penyimpanan riwayat klien &amp; status pembayaran langsung di browser perangkatmu (Export/Import JSON &amp; CSV).</li>
+          </ul>
+        </div>
+        <a class="card-link" href="https://lynk.id/mamangwarkop" target="_blank" rel="noopener">Dapatkan di Lynk.id / Mayar &rarr;</a>
+      </div>
+    </div>
+
+    <div class="footer">
+      &copy; 2026 Mamang Warkop Automation Suite &bull; <a href="https://github.com/mamangwarkop" style="color:var(--purple);text-decoration:none;">GitHub</a> &bull; <a href="https://apify.com/mamang_warkop" style="color:var(--cyan);text-decoration:none;">Apify Store</a> &bull; <a href="https://lynk.id/mamangwarkop" style="color:#d8b4fe;text-decoration:none;">Lynk.id Store</a>
+    </div>
+  </div>
+</body>
+</html>

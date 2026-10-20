@@ -1,0 +1,53 @@
+{
+  "name": "Shopify B2B Store Lead & Ad-Pixel Agency Enricher (Apify + Google Sheets)",
+  "nodes": [
+    {
+      "parameters": {},
+      "id": "1",
+      "name": "Manual Trigger",
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [240, 300]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.apify.com/v2/acts/mamang_warkop~shopify-products-and-store-leads-scraper/run-sync-get-dataset-items?token=YOUR_APIFY_API_TOKEN",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "{\n  \"stores\": [\"allbirds.com\", \"kyliecosmetics.com\", \"colourpop.com\"],\n  \"mode\": \"store_leads\",\n  \"maxResults\": 10\n}",
+        "options": {}
+      },
+      "id": "2",
+      "name": "Apify - Enrich Shopify Store Leads & Pixels",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
+      "position": [500, 300]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "boolean": [
+            {
+              "value1": "={{ $json.isShopify }}",
+              "value2": true
+            }
+          ]
+        }
+      },
+      "id": "3",
+      "name": "Filter Active E-Commerce Stores",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [760, 300]
+    }
+  ],
+  "connections": {
+    "Manual Trigger": {
+      "main": [[{ "node": "Apify - Enrich Shopify Store Leads & Pixels", "type": "main", "index": 0 }]]
+    },
+    "Apify - Enrich Shopify Store Leads & Pixels": {
+      "main": [[{ "node": "Filter Active E-Commerce Stores", "type": "main", "index": 0 }]]
+    }
+  }
+}
